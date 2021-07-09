@@ -1,0 +1,16 @@
+asgiref==3.4.1
+certifi==2021.5.30
+chardet==4.0.0
+Django==3.2.5
+django-rest-framework==0.1.0
+djangorestframework==3.12.4
+idna==2.10
+PyJWT==1.7.1
+python-dotenv==0.18.0
+pytz==2021.1
+requests==2.25.1
+six==1.16.0
+sqlparse==0.4.1
+twilio==6.61.0
+typing-extensions==3.10.0.0
+urllib3==1.26.6
