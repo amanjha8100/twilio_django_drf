@@ -24,7 +24,7 @@ from django.conf import settings
 def room(request):
     '''Creates a room on the basis of unique name provided'''
     if request.method == "POST":
-        name = request.data or ''
+        name = request.data['name'] or ''
         if name == '':
             return Response(status.HTTP_400_BAD_REQUEST)
         print(settings.TWILIO_SID)
@@ -35,10 +35,10 @@ def room(request):
     return Response(status.HTTP_400_BAD_REQUEST)
 
 @api_view(["GET","POST"])
-def token(request, room):
+def token(request, sid):
     '''Creates an access token and grants video access with the room specified'''
     if request.method == "POST":
-        identity = request.data or ''
+        identity = request.data['identity'] or ''
         if identity is '':
             return Response(status.HTTP_400_BAD_REQUEST)
         token = AccessToken(settings.TWILIO_API_SID, settings.TWILIO_API_SECRET, settings.TWILIO_SID)
